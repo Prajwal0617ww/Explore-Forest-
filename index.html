@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌲 Explore the Forests</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: url('https://www.transparenttextures.com/patterns/wood-pattern.png') #d4e4bc;
+            background-blend-mode: overlay;
+            color: #2e2e2e;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2e5e2e;
+            font-size: clamp(1.8em, 5vw, 3em);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-in;
+        }
+        .forest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .forest-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 245, 230, 0.9));
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .forest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+        .forest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #4a704a, #8a9a5b);
+        }
+        .forest-card h2 {
+            color: #355035;
+            margin: 0 0 10px;
+            font-size: clamp(1.2em, 3vw, 1.6em);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .slider {
+            width: 100%;
+            height: clamp(200px, 30vw, 300px);
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #8a9a5b;
+        }
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .forest-info p {
+            margin: 5px 0;
+            font-size: clamp(0.85em, 2.5vw, 1em);
+        }
+        .forest-info a {
+            color: #4a704a;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .forest-info a:hover {
+            color: #2e5e2e;
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .forest-grid {
+                grid-template-columns: 1fr;
+            }
+            .forest-card {
+                padding: 10px;
+            }
+            .slider {
+                height: clamp(150px, 40vw, 200px);
+            }
+            .forest-info p {
+                margin: 3px 0;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .forest-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌲 Explore the Forests</h1>
+        <div class="forest-grid">
+            <!-- Tropical Rainforests -->
+            <div class="forest-card" id="tropical">
+                <h2>🌴 Tropical Rainforests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Aerial_view_of_the_Amazon_Rainforest.jpg/500px-Aerial_view_of_the_Amazon_Rainforest.jpg" alt="Tropical Rainforest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Lush, biodiverse forests with high rainfall.</p>
+                    <p><strong>Climate:</strong> Hot, humid, 20-30°C.</p>
+                    <p><strong>Location:</strong> Amazon, Congo, Southeast Asia.</p>
+                    <p><strong>Flora/Fauna:</strong> Orchids, jaguars.</p>
+                    <p><strong>Fun Fact:</strong> Over 50% of world’s species!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Tropical_rainforest" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Temperate Deciduous Forests -->
+            <div class="forest-card" id="temperate">
+                <h2>🍂 Temperate Deciduous Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Primeval_beech_forest%2C_Bad%C3%ADnsky_prales.jpg/330px-Primeval_beech_forest%2C_Bad%C3%ADnsky_prales.jpg" alt="Temperate Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Seasonal forests with shedding trees.</p>
+                    <p><strong>Climate:</strong> Cold winters, warm summers.</p>
+                    <p><strong>Location:</strong> Eastern USA, Europe.</p>
+                    <p><strong>Flora/Fauna:</strong> Oaks, deer.</p>
+                    <p><strong>Fun Fact:</strong> Colorful autumn leaves!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Temperate_deciduous_forest" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Coniferous Forests -->
+            <div class="forest-card" id="coniferous">
+                <h2>🌲 Coniferous Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sapins_pectin%C3%A9s.jpg/330px-Sapins_pectin%C3%A9s.jpg" alt="Coniferous Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Evergreen needle-leaf forests.</p>
+                    <p><strong>Climate:</strong> Cold winters, mild summers.</p>
+                    <p><strong>Location:</strong> Canada, Scandinavia.</p>
+                    <p><strong>Flora/Fauna:</strong> Pines, bears.</p>
+                    <p><strong>Fun Fact:</strong> Green year-round!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Coniferous_forest" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Mangrove Forests -->
+            <div class="forest-card" id="mangrove">
+                <h2>🪵 Mangrove Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Sonneratia_alba_-_Manado_%282%29.JPG/435px-Sonneratia_alba_-_Manado_%282%29.JPG" alt="Mangrove Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Coastal salt-tolerant forests.</p>
+                    <p><strong>Climate:</strong> Warm, tropical, saline.</p>
+                    <p><strong>Location:</strong> Florida, Southeast Asia.</p>
+                    <p><strong>Flora/Fauna:</strong> Mangroves, crabs.</p>
+                    <p><strong>Fun Fact:</strong> Roots breathe above water!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Mangrove" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Boreal Forests -->
+            <div class="forest-card" id="boreal">
+                <h2>❄️ Boreal (Taiga) Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Jack_London_Lake_by_bartosh.jpg/408px-Jack_London_Lake_by_bartosh.jpg" alt="Boreal Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Cold coniferous forests.</p>
+                    <p><strong>Climate:</strong> Long winters, short summers.</p>
+                    <p><strong>Location:</strong> Russia, Canada.</p>
+                    <p><strong>Flora/Fauna:</strong> Spruce, moose.</p>
+                    <p><strong>Fun Fact:</strong> Largest land biome!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Taiga" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Cloud Forests -->
+            <div class="forest-card" id="cloud">
+                <h2>☁️ Cloud Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cloud_forest_mount_kinabalu.jpg/330px-Cloud_forest_mount_kinabalu.jpg" alt="Cloud Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Misty, high-altitude forests.</p>
+                    <p><strong>Climate:</strong> Cool, humid, foggy.</p>
+                    <p><strong>Location:</strong> Andes, Central America.</p>
+                    <p><strong>Flora/Fauna:</strong> Mosses, quetzals.</p>
+                    <p><strong>Fun Fact:</strong> Often shrouded in clouds!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Cloud_forest" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Dry Forests -->
+            <div class="forest-card" id="dry">
+                <h2>🏜️ Dry Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Chacachacare_dry_forest_3.JPG/330px-Chacachacare_dry_forest_3.JPG" alt="Dry Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Sparse forests in arid regions.</p>
+                    <p><strong>Climate:</strong> Hot, dry with rainy seasons.</p>
+                    <p><strong>Location:</strong> Mexico, India.</p>
+                    <p><strong>Flora/Fauna:</strong> Cacti, lizards.</p>
+                    <p><strong>Fun Fact:</strong> Adapted to drought!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Tropical_and_subtropical_dry_broadleaf_forests" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Mediterranean Forests -->
+            <div class="forest-card" id="mediterranean">
+                <h2>🌿 Mediterranean Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Jabal_Moussa_Biosphere_Reserve_03.jpg/330px-Jabal_Moussa_Biosphere_Reserve_03.jpg" alt="Mediterranean Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Scrubby forests with evergreen shrubs.</p>
+                    <p><strong>Climate:</strong> Hot, dry summers; mild, wet winters.</p>
+                    <p><strong>Location:</strong> Mediterranean Basin, California.</p>
+                    <p><strong>Flora/Fauna:</strong> Olive trees, lynxes.</p>
+                    <p><strong>Fun Fact:</strong> Fire-adapted vegetation!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Mediterranean_forests,_woodlands,_and_scrub" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+
+            <!-- Flooded Forests -->
+            <div class="forest-card" id="flooded">
+                <h2>💧 Flooded Forests</h2>
+                <div class="slider">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Morava%27s_flooded_forest_02.jpg/330px-Morava%27s_flooded_forest_02.jpg" alt="Flooded Forest">
+                </div>
+                <div class="forest-info">
+                    <p><strong>Description:</strong> Forests in seasonally flooded areas.</p>
+                    <p><strong>Climate:</strong> Warm, wet with flood cycles.</p>
+                    <p><strong>Location:</strong> Amazon Basin, Southeast Asia.</p>
+                    <p><strong>Flora/Fauna:</strong> Water lilies, piranhas.</p>
+                    <p><strong>Fun Fact:</strong> Trees thrive in water!</p>
+                    <p><strong>Learn More:</strong> <a href="https://en.wikipedia.org/wiki/Flooded_forest" target="_blank">Wikipedia</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
